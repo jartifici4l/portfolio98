@@ -1,0 +1,176 @@
+/* Paleta de colores básica de Win98 */
+:root {
+    --color-desktop-blue: #008080; /* Azul verdoso clásico */
+    --color-window-gray: #c0c0c0; /* Gris de las ventanas */
+    --color-dark-border: #808080;
+    --color-light-border: #ffffff;
+    --color-blue-title: #000080; /* Azul oscuro de la barra de título */
+    --font-family-classic: 'MS Sans Serif', 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--color-desktop-blue);
+    font-family: var(--font-family-classic);
+    margin: 0;
+    overflow: hidden; /* Oculta barras de desplazamiento del cuerpo */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 1. Escritorio (Desktop) --- */
+
+#desktop {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    position: relative;
+    padding: 10px;
+}
+
+/* --- 2. Carpetas (Íconos) --- */
+
+.folder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 65px; /* Ancho para el icono y texto */
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-light-border);
+    text-shadow: 1px 1px #000000; /* Sombra negra para el texto */
+}
+
+/* Posicionamiento específico de las carpetas */
+#folder-about { top: 20px; }
+#folder-works { top: 100px; }
+#folder-contact { top: 180px; }
+
+.folder img {
+    display: block;
+    width: 32px; /* Tamaño clásico de los íconos */
+    height: 32px;
+    margin: 0 auto 5px auto;
+    /* La imagen debe ser un icono de carpeta Win98 real o simulado */
+}
+
+.folder-title {
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.folder:hover .folder-title {
+    background-color: var(--color-blue-title);
+    color: var(--color-light-border);
+}
+
+
+/* --- 3. Ventanas --- */
+
+.window {
+    position: absolute;
+    width: 400px;
+    min-height: 200px;
+    background-color: var(--color-window-gray);
+    border: 1px solid var(--color-dark-border);
+    box-shadow: 
+        -1px -1px var(--color-light-border),
+        1px 1px var(--color-dark-border),
+        -2px -2px #000000; /* Borde interior 3D */
+    z-index: 10;
+    display: none; /* Inicialmente ocultas */
+    top: 50px;
+    left: 150px;
+    resize: both; /* Permite redimensionar */
+    overflow: auto;
+}
+
+.title-bar {
+    background-color: var(--color-blue-title);
+    color: var(--color-light-border);
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move; /* Indica que la barra de título es arrastrable */
+    user-select: none;
+    border-bottom: 1px solid var(--color-dark-border);
+}
+
+.title-text {
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.window-controls button {
+    background-color: var(--color-window-gray);
+    border: 1px solid var(--color-light-border);
+    border-right: 1px solid var(--color-dark-border);
+    border-bottom: 1px solid var(--color-dark-border);
+    padding: 0 5px;
+    height: 18px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 2px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.window-content {
+    padding: 10px;
+    background-color: var(--color-light-border); /* Fondo blanco para el contenido */
+    border-top: 2px solid var(--color-window-gray);
+    font-size: 12px;
+    height: calc(100% - 28px); /* Ajuste de altura */
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+/* --- 4. Barra de Tareas (Taskbar) --- */
+
+#taskbar {
+    background-color: var(--color-window-gray);
+    border-top: 1px solid var(--color-light-border);
+    border-bottom: 1px solid var(--color-dark-border);
+    height: 28px;
+    display: flex;
+    align-items: center;
+    padding: 2px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100; /* Asegura que esté al frente */
+}
+
+#start-button {
+    background-color: var(--color-window-gray);
+    border: 1px solid var(--color-light-border);
+    border-right: 1px solid var(--color-dark-border);
+    border-bottom: 1px solid var(--color-dark-border);
+    font-weight: bold;
+    padding: 2px 6px 2px 2px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#start-button:active {
+    border: 1px solid var(--color-dark-border);
+    border-right: 1px solid var(--color-light-border);
+    border-bottom: 1px solid var(--color-light-border);
+    padding-top: 3px;
+    padding-bottom: 1px;
+}
+
+#time {
+    position: absolute;
+    right: 5px;
+    background-color: var(--color-window-gray);
+    padding: 0 5px;
+    border: 1px solid var(--color-dark-border);
+    border-right: 1px solid var(--color-light-border);
+    border-bottom: 1px solid var(--color-light-border);
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
