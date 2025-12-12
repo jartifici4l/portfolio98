@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio 98 - Artista/Investigador</title>
+    <title>Portafolio 98</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
     <div id="taskbar">
         <button id="start-button">
-            Start
+            <b>Nada</b>
         </button>
         <div id="time"></div>
     </div>
@@ -18,66 +18,72 @@
     <div id="desktop">
         <div class="folder" id="folder-about" onclick="openWindow('about')">
             <span class="folder-icon">📁</span>
-            <span class="folder-title">1) about_yo</span>
+            <span class="folder-title">about_yo</span>
         </div>
 
         <div class="folder" id="folder-works" onclick="openWindow('works')">
-            <span class="folder-icon">📄</span>
-            <span class="folder-title">2) trabajos</span>
+            <span class="folder-icon">📁</span>
+            <span class="folder-title">trabajos</span>
         </div>
 
         <div class="folder" id="folder-contact" onclick="openWindow('contact')">
-            <span class="folder-icon">📧</span>
-            <span class="folder-title">3) contactos</span>
+            <span class="folder-icon">📁</span>
+            <span class="folder-title">contactos</span>
         </div>
 
         <div class="window" id="window-about">
             <div class="title-bar">
-                <span class="title-text">acerca de yo.txt</span>
+                <span class="title-text">acerca de yo</span>
                 <div class="window-controls">
-                    <button class="minimize" onclick="minimizeWindow('about')">-</button>
-                    <button class="close" onclick="closeWindow('about')">x</button>
+                    <button aria-label="Minimizar" onclick="minimizeWindow('about')">_</button>
+                    <button aria-label="Maximizar" onclick="toggleMaximize('about')">□</button>
+                    <button aria-label="Cerrar" class="close" onclick="closeWindow('about')">x</button>
                 </div>
             </div>
             <div class="window-content">
-                <h3>Hola, soy [Tu Nombre]</h3>
-                <p>Artista e Investigador enfocado en [tu área, ej: arte generativo, historia del arte, etc.]. Mi trabajo explora la intersección de la tecnología obsoleta y la memoria digital.</p>
-                <p>Esta ventana es como un archivo de texto simple del viejo Windows.</p>
+                <p>He ido encaminando mis procesos académicos, investigativos y artísticos con base principalmente en lenguajes gráficos, pictóricos y digitales desde el arte, y en lenguajes sensibles y creativos desde la pedagogía, integrando diversos saberes en mi formación personal y profesional, desarrollando tanto procesos artísticos como educativos principalmente en torno a pedagogías críticas y procesos de creación relacionados a la identidad, tanto individual como colectiva.</p>
             </div>
         </div>
 
         <div class="window" id="window-works">
             <div class="title-bar">
-                <span class="title-text">trabajos.htm</span>
+                <span class="title-text">trabajos</span>
                 <div class="window-controls">
-                    <button class="minimize" onclick="minimizeWindow('works')">-</button>
-                    <button class="close" onclick="closeWindow('works')">x</button>
+                    <button aria-label="Minimizar" onclick="minimizeWindow('works')">_</button>
+                    <button aria-label="Maximizar" onclick="toggleMaximize('works')">□</button>
+                    <button aria-label="Cerrar" class="close" onclick="closeWindow('works')">x</button>
                 </div>
             </div>
-            <div class="window-content">
-                <h3>📂 Proyectos y Obras</h3>
-                <ul>
-                    <li>**[Año] - Título del Proyecto 1:** Breve descripción.</li>
-                    <li>**[Año] - Título del Artículo 2:** Publicación o enlace.</li>
-                    <li>**[Año] - Instalación 3:** Tema principal.</li>
-                </ul>
-                <p>¡Haz clic en el icono para ver mis trabajos!</p>
-            </div>
+            <div class="window-content folder-view">
+                <div class="file-item">
+                    <div class="file-icon">🖼️</div> <div class="file-name">proyecto_01.jpg</div>
+                </div>
+
+                <div class="file-item">
+                    <div class="file-icon">🖼️</div>
+                    <div class="file-name">boceto_digital.png</div>
+                </div>
+
+                <div class="file-item">
+                    <div class="file-icon">🖼️</div>
+                    <div class="file-name">instalacion_v1.jpg</div>
+                </div>
+                
+                </div>
         </div>
 
         <div class="window" id="window-contact">
             <div class="title-bar">
-                <span class="title-text">contactos.exe</span>
+                <span class="title-text">contactos</span>
                 <div class="window-controls">
-                    <button class="minimize" onclick="minimizeWindow('contact')">-</button>
-                    <button class="close" onclick="closeWindow('contact')">x</button>
+                    <button aria-label="Minimizar" onclick="minimizeWindow('contact')">_</button>
+                    <button aria-label="Maximizar" onclick="toggleMaximize('contact')">□</button>
+                    <button aria-label="Cerrar" class="close" onclick="closeWindow('contact')">x</button>
                 </div>
             </div>
             <div class="window-content">
-                <h3>📞 ¡Hablemos!</h3>
-                <p>Email: <a href="mailto:tunombre@email.com">tunombre@email.com</a></p>
-                <p>Redes: <a href="#">@tu_usuario_social</a></p>
-                <p>¡El sistema te conectará en breve!</p>
+                <p><strong>Correo electrónico:</strong> <a href="mailto:javihpones@gmail.com">javihpones@gmail.com</a></p>
+                <p><strong>Instagram:</strong> <a href="https://instagram.com/n0pinion" target="_blank">@n0pinion</a></p>
             </div>
         </div>
     </div>
